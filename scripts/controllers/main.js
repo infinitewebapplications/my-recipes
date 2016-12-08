@@ -1,11 +1,14 @@
-'use strict';
+(function () {
+  'use strict';
 
-app.controller('mainCtrl', function($scope, dataService) {
+  angular.module('myRecipes')
+  .controller('mainCtrl', function($scope, dataService) {
 
-  $scope.works = [];
+    $scope.works = [];
 
-  dataService.getData(function(response){
-    // $scope.works = response.data;
+    dataService.getData(function(response){
+      // $scope.works = response.data;
+    });
+
   });
-
-});
+})();

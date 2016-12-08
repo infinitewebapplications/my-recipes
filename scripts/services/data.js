@@ -1,9 +1,12 @@
-'use strict';
+(function () {
+  'use strict';
 
-app.service('dataService', function($http){
+  angular.module('myRecipes')
+  .service('dataService', function($http){
 
-  this.getData = function(callback) {
-    // $http.get('data/works.json').then(callback);
-  };
+    this.getData = function(callback) {
+      // $http.get('data/works.json').then(callback);
+    };
 
-});
+  });
+})();
