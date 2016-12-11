@@ -12,9 +12,9 @@ TODO
 
 Installation
 --------------------
-Run
-`npm install`
-`npm install grunt`
+Run:
+1. `npm install`
+2. `npm install grunt`
 
 Suggest a change
 --------------------
