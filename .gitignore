@@ -1,3 +1,6 @@
+##################################
+## OS and Editor Specific Files ##
+##################################
 .DS_Store
 .DS_Store?
 ._*
@@ -6,3 +9,8 @@
 Icon?
 ehthumbs.db
 Thumbs.db
+
+###################
+## Build Folders ##
+###################
+/node_modules
