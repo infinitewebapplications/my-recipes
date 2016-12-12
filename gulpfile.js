@@ -16,7 +16,9 @@ var gulp = require('gulp'),
     del = require('del');
 
 gulp.task('prod', ['clean'], function() {
+
   gulp.start('html', 'css', 'js', 'img');
+
 });
 
 gulp.task('clean', function() {
@@ -61,7 +63,7 @@ gulp.task('css', function() {
 
 gulp.task('js', function() {
 
-  return gulp.src('scripts/**/*.js')
+  return gulp.src(['scripts/app.js', 'scripts/controllers/*.js', 'scripts/services/*.js'])
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('default'))
     .pipe(concat('main.js'))

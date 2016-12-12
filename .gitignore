@@ -13,4 +13,5 @@ Thumbs.db
 ###################
 ## Build Folders ##
 ###################
+/.sass-cache
 /node_modules

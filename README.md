@@ -15,6 +15,8 @@ Installation
 Run:
 1. `npm install`
 2. `npm install gulp`
+3. `gem install sass`
+*You might need to use sudo for some of these*
 
 Gulp Build Tasks
 --------------------
