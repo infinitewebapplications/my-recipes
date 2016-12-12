@@ -12,15 +12,16 @@ TODO
 
 Installation
 --------------------
-Run:  
+**Run:**  
 1. `npm install`  
 2. `npm install gulp`  
 3. `gem install sass`  
+
 *You might need to use sudo for some of these*  
 
 Gulp Build Tasks
 --------------------
-Tasks you can run:  
+**Tasks you can run:**  
 1. `gulp css`  
 2. `gulp js`  
 3. `gulp html`  
@@ -35,9 +36,9 @@ Hit up the pull requests if you see something that needs to be changed or if the
 
 Creator / Maintainer
 --------------------
-**Caleb Nance**
-- <https://twitter.com/calebnance>
-- <https://github.com/calebnance>
+**Caleb Nance**  
+- <https://twitter.com/calebnance>  
+- <https://github.com/calebnance>  
 
 Copyright and license
 --------------------
