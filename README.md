@@ -12,7 +12,7 @@ TODO
 
 Installation
 --------------------
-Run:
+Run:  
 1. `npm install`  
 2. `npm install gulp`  
 3. `gem install sass`  
@@ -21,13 +21,13 @@ Run:
 Gulp Build Tasks
 --------------------
 Tasks you can run:
-1. `gulp css`
-2. `gulp js`
-3. `gulp html`
-4. `gulp img`
-5. `gulp watch`
-6. `gulp clean` :: cleans /dist folder
-6. `gulp prod` :: cleans /dist and then sets /dist ready for production deploy
+1. `gulp css`  
+2. `gulp js`  
+3. `gulp html`  
+4. `gulp img`  
+5. `gulp watch`  
+6. `gulp clean` :: cleans /dist folder  
+6. `gulp prod` :: cleans /dist and then sets /dist ready for production deploy  
 
 Suggest a change
 --------------------
