@@ -20,7 +20,7 @@ Run:
 
 Gulp Build Tasks
 --------------------
-Tasks you can run:
+Tasks you can run:  
 1. `gulp css`  
 2. `gulp js`  
 3. `gulp html`  
