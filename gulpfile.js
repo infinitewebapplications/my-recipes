@@ -13,7 +13,8 @@ var gulp = require('gulp'),
     notify = require('gulp-notify'),
     cache = require('gulp-cache'),
     livereload = require('gulp-livereload'),
-    del = require('del');
+    del = require('del')
+    ngAnnotate = require('gulp-ng-annotate');
 
 var jsFiles = [
   'src/scripts/app.js',
@@ -72,6 +73,7 @@ gulp.task('js', function() {
   return gulp.src(jsFiles)
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('default'))
+    .pipe(ngAnnotate())
     .pipe(concat('main.js'))
     .pipe(gulp.dest('dist/js'))
     .pipe(rename({suffix: '.min'}))

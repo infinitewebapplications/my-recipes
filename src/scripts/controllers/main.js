@@ -5,7 +5,7 @@
   .controller('mainCtrl', function($scope, dataService) {
 
     dataService.getData(function(response){
-      
+
     });
 
   });
