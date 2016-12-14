@@ -15,6 +15,12 @@ var gulp = require('gulp'),
     livereload = require('gulp-livereload'),
     del = require('del');
 
+var jsFiles = [
+  'src/scripts/app.js',
+  'src/scripts/controllers/*.js',
+  'src/scripts/services/*.js'
+];
+
 gulp.task('prod', ['clean'], function() {
 
   gulp.start('html', 'css', 'js', 'img');
@@ -28,19 +34,19 @@ gulp.task('clean', function() {
 
 gulp.task('watch', function() {
   // watch .scss files
-  gulp.watch('styles/**/*.scss', ['css']);
+  gulp.watch('src/styles/**/*.scss', ['css']);
 
   // watch .js files
-  gulp.watch('scripts/**/*.js', ['js']);
+  gulp.watch(jsFiles, ['js']);
 
   // watch image files
-  gulp.watch('img/**/*', ['img']);
+  gulp.watch('src/img/**/*', ['img']);
 
   // create LiveReload server
-  livereload.listen();
+  // livereload.listen();
 
   // watch any files in dist/, reload on change
-  gulp.watch(['dist/**']).on('change', livereload.changed);
+  // gulp.watch(['dist/**']).on('change', livereload.changed);
 });
 
 gulp.task('html', function() {
@@ -52,7 +58,7 @@ gulp.task('html', function() {
 
 gulp.task('css', function() {
 
-  return sass('styles/app.scss', { style: 'expanded' })
+  return sass('src/styles/app.scss', { style: 'expanded' })
     .pipe(autoprefixer('last 2 version'))
     .pipe(gulp.dest('dist/css'))
     .pipe(rename({suffix: '.min'}))
@@ -63,7 +69,7 @@ gulp.task('css', function() {
 
 gulp.task('js', function() {
 
-  return gulp.src(['scripts/app.js', 'scripts/controllers/*.js', 'scripts/services/*.js'])
+  return gulp.src(jsFiles)
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('default'))
     .pipe(concat('main.js'))
@@ -76,7 +82,7 @@ gulp.task('js', function() {
 
 gulp.task('img', function() {
 
-  return gulp.src('img/**/*')
+  return gulp.src('src/img/**/*')
     .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
     .pipe(gulp.dest('dist/img'))
     .pipe(notify({ message: 'Images task complete' }));

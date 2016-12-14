@@ -1,0 +1,31 @@
+@import 'variables';
+@import 'mixins';
+
+/*****************
+ * Mobile First *
+******************/
+html {
+  font-family: $font-stack;
+}
+
+body {
+  color: $primary-color;
+}
+
+.box {
+  // mixin example
+  @include border-radius(10px);
+}
+
+.message {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+  background-color: #f00;
+}
+
+.success {
+  // extend example
+  @extend .message;
+  border-color: green;
+}

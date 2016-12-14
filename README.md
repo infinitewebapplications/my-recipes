@@ -30,6 +30,12 @@ Gulp Build Tasks
 6. `gulp clean` :: cleans /dist folder  
 6. `gulp prod` :: cleans /dist and then sets /dist ready for production deploy  
 
+Technologies
+--------------------
+1. [SASS](http://sass-lang.com)  
+  * [Learn](http://sass-lang.com/guide)  
+  * [Docs](http://sass-lang.com/documentation/file.SASS_REFERENCE.html)  
+
 Suggest a change
 --------------------
 Hit up the pull requests if you see something that needs to be changed or if there is a bug found, help is always appreciated!
