@@ -1,3 +1,10 @@
+<?php
+  // includes
+  include('helper/install-class.php');
+  
+  // is the app installed?
+  install::check();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -19,7 +26,6 @@
     </div><!-- /.container -->
 
     <!-- le javascript -->
-    <script src="src/scripts/jquery-1.11.1.min.js"></script>
     <script src="src/scripts/jquery-1.11.1.min.js"></script>
     <script src="src/scripts/bootstrap.min.js"></script>
     <script src="src/scripts/angular.min.js"></script>

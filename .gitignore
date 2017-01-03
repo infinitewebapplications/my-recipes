@@ -15,3 +15,8 @@ Thumbs.db
 ###################
 /.sass-cache
 /node_modules
+
+######################
+## App Ignore Files ##
+######################
+mr.php
