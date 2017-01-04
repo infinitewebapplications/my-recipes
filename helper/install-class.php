@@ -11,6 +11,9 @@ class install {
 	/** @var string file name for installation constants */
   const INSTALL_FILE = 'mr.php';
 
+	/** @var string class name for installation constants */
+  const CLASS_NAME	 = 'mr';
+
 	/**
 	 * grab working directory
 	 *
@@ -20,6 +23,7 @@ class install {
 
 		// return working directory
 		return str_replace('helper', '', __DIR__);
+
 	}
 
 	/**
@@ -28,35 +32,84 @@ class install {
 	 * @return boolean|void
 	 */
 	public static function check() {
-		// set "installed" file's path
-		$mr = self::getDir() . self::INSTALL_FILE;
 
 		// check if "installed" file exists
-		if(file_exists($mr)){
-			echo 'file exists!';
-			exit();
+		if(self::mrFileCheck()){
+			// set "installed" file's path
+			$mr = self::getDir() . self::INSTALL_FILE;
 			// include install file
 			include($mr);
-			// has installation happened?
-			if(class_exists('mr')) {
+			// has the database installation happened?
+			if(class_exists(self::CLASS_NAME)) {
+				echo 'CLASS EXISTS!';
+				exit();
 
+				return true;
+			} else {
+				echo 'here ';
+				echo self::CLASS_NAME;
+				
 				return false;
 			}
-			$checkCurrentPage = getCurrentPage();
-			// are we at the wizard?
-			if($checkCurrentPage != 'wizard.php' && $checkCurrentPage != 'wizard-ajax.php' && $checkCurrentPage != 'ajax.php') {
-				// go to wizard!
-				goToWizard();
-				exit();
-			}
+			// $checkCurrentPage = getCurrentPage();
+			// // are we at the wizard?
+			// if($checkCurrentPage != 'wizard.php' && $checkCurrentPage != 'wizard-ajax.php' && $checkCurrentPage != 'ajax.php') {
+			// 	// go to wizard!
+			// 	goToWizard();
+			// 	exit();
+			// }
 		} else {
-			// file does not exist, so create the file
-			fclose(fopen($mr, 'w'));
-
 			// go to install page
 			self::gotoInstall();
 			exit();
 		}
+
+	}
+
+	/**
+	 * do we have the "installed" file?
+	 *
+	 * @return boolean
+	 */
+	public static function mrFileCheck() {
+
+		// set "installed" file's path
+		$mr = self::getDir() . self::INSTALL_FILE;
+
+		// check if file exists
+		if(file_exists($mr)){
+
+			return true;
+		} else {
+			// file does not exist, so create the file
+			fclose(fopen($mr, 'w'));
+
+			return false;
+		}
+
+	}
+
+	/**
+	 * do we have the "installed" file content set?
+	 *
+	 * @return boolean
+	 */
+	public static function mrFileContent() {
+
+		// set "installed" file's path
+		$mr = self::getDir() . self::INSTALL_FILE;
+
+		// check if file exists
+		if(file_exists($mr)){
+
+			return true;
+		} else {
+			// file does not exist, so create the file
+			fclose(fopen($mr, 'w'));
+
+			return false;
+		}
+
 	}
 
 	/**
@@ -68,35 +121,7 @@ class install {
 
 		header('Location: /install');
 		exit();
-	}
 
-	/**
-	 * do we have the "installed" file content set?
-	 *
-	 * @return boolean
-	 */
-	public static function mrCheck() {
-		// set return to true first
-		$return = true;
-		// set "installed" file's path
-		$mr = self::getDir() . self::INSTALL_FILE;
-
-		// check if file exists
-		if(file_exists($mr)){
-			// include install file
-			include($mr);
-			// is file empty?
-			if(!class_exists('mr')) {
-				echo 'mrCheck()::no content';
-				$return = false;
-			}
-		} else {
-			// file does not exist!
-			echo 'mrCheck()::file no exist!';
-			$return = false;
-		}
-
-		return $return;
 	}
 
 	/**
