@@ -46,9 +46,7 @@ class install {
 
 				return true;
 			} else {
-				echo 'here ';
-				echo self::CLASS_NAME;
-				
+
 				return false;
 			}
 			// $checkCurrentPage = getCurrentPage();
