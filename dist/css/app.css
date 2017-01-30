@@ -1,0 +1,36 @@
+/*************
+ * variables *
+ *************/
+/**********
+ * mixins *
+ **********/
+/****************
+ * mobile first *
+ ****************/
+html {
+  font-family: Helvetica, sans-serif;
+}
+
+body {
+  color: #333;
+}
+
+.progress {
+  margin-top: 20px;
+}
+
+.box {
+  border-radius: 10px;
+  transform: scale(0.5);
+}
+
+.message, .success {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+  background-color: #f00;
+}
+
+.success {
+  border-color: green;
+}
